@@ -24,3 +24,33 @@ Does all this
 - And lot more
 
 Read more here - [Parcel](https://parceljs.org/)
+
+# Food App
+
+/\*\*
+
+- Header
+- - Logo
+- - Nav Items
+- Body
+- - Search
+- - RestaurantContainer
+- - RestaurantCard
+-      -Img
+-      -Name of Res, Star Rating, Cuisine, Delivery Time
+- Footer
+- - CopyRight
+- - Links
+- - Address
+- - Contact
+    \*/
+
+# 2 types of export/import
+
+- Default Export/Import
+  export default Component
+  import Component from "path";
+
+- Named Export/Import
+  export const Component
+  import {Component} from "path";
