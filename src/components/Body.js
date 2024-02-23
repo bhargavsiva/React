@@ -1,46 +1,37 @@
 import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockData";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   // State variable - super powerful.
-  const [listOfRestaurants, setListOfRestaurants] = useState(resList);
-  /*
-Same!!!!
-Array Destructuring...
-  const arr= useState(resList);
-  const listOfRestaurants = arr[0];
-  const setListOfRestaurants = arr[1];
-*/
+  const [listOfRestaurants, setListOfRestaurants] = useState([]);
 
-  // normal JS variable
-  //   let listOfRestaurantsJS = [
-  //     {
-  //       type: "restaurant",
-  //       data: {
-  //         id: "74453",
-  //         name: "Domino's Pizza",
-  //         cloudinaryImageId: "bz9zkh2aqywjhpankb07",
-  //         cuisines: ["Pizzas"],
-  //         costForTwo: 40000,
-  //         deliveryTime: 45,
-  //         avgRating: "4.2",
-  //       },
-  //     },
-  //     {
-  //       type: "restaurant",
-  //       data: {
-  //         id: "74454",
-  //         name: "KFC",
-  //         cloudinaryImageId: "bz9zkh2aqywjhpankb07",
-  //         cuisines: ["Burger"],
-  //         costForTwo: 40000,
-  //         deliveryTime: 45,
-  //         avgRating: "3.8",
-  //       },
-  //     },
-  //   ];
-  return (
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://foodfire.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING"
+    ); //power of brower
+
+    const json = await data.json();
+
+    // console.log(json);
+    setListOfRestaurants(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+  };
+
+  // Conditional Rendering
+  //   if (listOfRestaurants.length === 0) {
+  //     return <Shimmer />;
+  //   }
+
+  return listOfRestaurants.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="Body">
       <div className="fiter">
         <button
@@ -48,7 +39,7 @@ Array Destructuring...
           onClick={() => {
             // Filter logic here.
             const filteredList = listOfRestaurants.filter(
-              (res) => res.data.avgRating > 4
+              (res) => res.info.avgRating > 4
             );
             setListOfRestaurants(filteredList);
             console.log(filteredList);
@@ -59,7 +50,7 @@ Array Destructuring...
       </div>
       <div className="res-container">
         {listOfRestaurants.map((restaurant) => (
-          <RestaurantCard key={restaurant.data.id} resData={restaurant} />
+          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
     </div>
