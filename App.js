@@ -1,37 +1,90 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// const Title = () => (
-//   <h1 className="head" tabIndex="5">
-//     React JSX
-//   </h1>
-// );
+/**
+ * Header
+ *  - Logo
+ *  - Nav Items
+ * Body
+ *  - Search
+ *  - RestaurantContainer
+ *    - RestaurantCard
+ *      -Img
+ *      -Name of Res, Star Rating, Cuisine, Delivery Time
+ * Footer
+ *  - CopyRight
+ *  - Links
+ *  - Address
+ *  - Contact
+ */
 
-const title = (
-  <h1 className="head" tabIndex="5">
-    React JSX
-  </h1>
-);
+const RestaurantCard = () => {
+  return (
+    <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
+      <img
+        className="res-logo"
+        alt="res-logo"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsKBSkRSYPSxtzK5XRa7OtJxXR-X5Q6wRIRA&usqp=CAU"
+      />
+      <h3>Meghana Foods</h3>
+      <h4>Biryani, North India, Asian</h4>
+      <h4>4.4 stars</h4>
+      <h4>38 minutes</h4>
+    </div>
+  );
+};
 
-// Component composition - referencing a component inside another
-// const HeadingComponent = () => (
-//   <div id="container">
-//     <Title />
-//     <h1 className="heading">Namaste React Func Component</h1>
-//   </div>
-// );
+const styleCard = {
+  backgroundColor: "#f0f0f0",
+};
 
-const number = 10000;
+const Body = () => {
+  return (
+    <div className="Body">
+      <div className="search">Search</div>
+      <div className="res-container">
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+        <RestaurantCard />
+      </div>
+    </div>
+  );
+};
 
-// We can write JS code inside curly braces in the JSX code
-const HeadingComponent = () => (
-  <div id="container">
-    <h2>{100 + 200}</h2>
-    <h2>{title}</h2>
-    <h1 className="heading">Namaste React Func Component</h1>
-  </div>
-);
+const Header = () => {
+  return (
+    <div className="header">
+      <div className="logo">
+        <img src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png" />
+      </div>
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+const AppLayout = () => {
+  return (
+    <div className="app">
+      <Header />
+      <Body />
+    </div>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<HeadingComponent />);
+root.render(<AppLayout />);
