@@ -1,6 +1,6 @@
 # React Course
 
-# Parcel
+## Parcel
 
 Does all this
 
@@ -25,7 +25,7 @@ Does all this
 
 Read more here - [Parcel](https://parceljs.org/)
 
-# Food App
+## Food App
 
 /\*\*
 
@@ -45,7 +45,7 @@ Read more here - [Parcel](https://parceljs.org/)
 - - Contact
     \*/
 
-# 2 types of export/import
+## 2 types of export/import
 
 - Default Export/Import
   export default Component
@@ -55,13 +55,13 @@ Read more here - [Parcel](https://parceljs.org/)
   export const Component
   import {Component} from "path";
 
-# React Hooks
+## React Hooks
 
 - Normal JS utility functions
 - 2 important hooks
   - useState() - Superpowerful State Variables in React
   - useEffect()
 
-# React lifecycle
+## React lifecycle
 
 https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
