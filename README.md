@@ -61,3 +61,7 @@ Read more here - [Parcel](https://parceljs.org/)
 - 2 important hooks
   - useState() - Superpowerful State Variables in React
   - useEffect()
+
+# React lifecycle
+
+https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
