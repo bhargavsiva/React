@@ -74,3 +74,19 @@ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 - slice(cartSlice)
 - dispatch(action)
 - selector
+
+## Types of Testing (developer)
+
+- Unit Testing
+- Integration Testing
+- End to End Testing
+
+## Setting up Testing in our app
+
+- Install React Testing Library
+- Install JEST
+- Installed Babel dependency
+- Configure Babel
+- Configure Parcel COnfig file to disable default babel transpilation
+- JEST -> npx jest --init
+- Install jsdom library
