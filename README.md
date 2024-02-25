@@ -65,3 +65,12 @@ Read more here - [Parcel](https://parceljs.org/)
 ## React lifecycle
 
 https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+## Redux Toolkit
+
+- Install @reduxjs/toolkit and react-redux
+- Build our store
+- Connect our store to app
+- slice(cartSlice)
+- dispatch(action)
+- selector
