@@ -1,19 +1,23 @@
-import { useContext, useEffect, useState } from "react";
-import UserContext from "../utils/UserContext";
-
 const Contact = () => {
-  const { loggedInUser } = useContext(UserContext);
-  const [userName, setUserName] = useState(null);
-  useEffect(() => {
-    setUserName("Now Changed");
-  });
-  console.log(loggedInUser);
   return (
-    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-      <div>
-        <h1>Contact Us</h1>
-      </div>
-    </UserContext.Provider>
+    <div className="">
+      <h1 className="font-bold text-3xl p-4 m-4">Contact Us</h1>
+      <form>
+        <input
+          type="text"
+          className="border-black p-2 m-2"
+          placeholder="name"
+        />
+        <input
+          type="text"
+          className="border-black p-2 m-2"
+          placeholder="message"
+        />
+        <button className="border-black p-2 m-2 bg-gray-100 rounded-lg">
+          Submit
+        </button>
+      </form>
+    </div>
   );
 };
 

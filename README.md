@@ -90,3 +90,7 @@ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 - Configure Parcel COnfig file to disable default babel transpilation
 - JEST -> npx jest --init
 - Install jsdom library
+
+- npm i -D @babel/preset-react => for JSX to run in tests
+- Add to babel config
+- Include @testing-library/jest-dom
